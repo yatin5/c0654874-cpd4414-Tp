@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Login;
+package com.Login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
         try {
             String name = request.getParameter("uname");
             String pass = request.getParameter("pass");
-            
+
             if( name.equalsIgnoreCase("yatin") && pass.equalsIgnoreCase("password")){
                 
                 HttpSession session= request.getSession();
@@ -44,12 +44,12 @@ public class Login extends HttpServlet {
                 session.setAttribute("xxx", name);
                 session.setAttribute("yyy", pass);
                 
-                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+                RequestDispatcher rd = request.getRequestDispatcher("pages/index.html");
                 
                 rd.forward(request, response);
             }
             else {
-               RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+               RequestDispatcher rd = request.getRequestDispatcher("pages/Login.html");
                rd.include(request, response);
             }
         } finally{
