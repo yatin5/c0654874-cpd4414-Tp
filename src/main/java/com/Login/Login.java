@@ -44,7 +44,8 @@ public class Login extends HttpServlet {
                 session.setAttribute("xxx", name);
                 session.setAttribute("yyy", pass);
                 
-                RequestDispatcher rd = request.getRequestDispatcher("index");
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+                System.out.println("login succesful");
                 
                 rd.forward(request, response);
             }
