@@ -32,8 +32,8 @@ public class Login extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-String user = req.getParameter("userName"); 
-String pass = req.getParameter("userPassword"); 
+String user = req.getParameter("user"); 
+String pass = req.getParameter("Password"); 
 String id=null; String userId=null; String sql = "SELECT id, userId, password FROM login where username='"+user+"' and password='"+pass+"'"; 
 ResultSet rs = null; 
             try {
