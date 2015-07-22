@@ -21,11 +21,11 @@ public class LoginDatabase {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String jdbc = "jdbc:mysql://localhost/c0654874";
+            String jdbc = "jdbc:mysql://127.5.207.2:3306/cyclestore";
             String user = "root";
             String pass = "";
             conn = DriverManager.getConnection(jdbc, user, pass);
-            String query = "SELECT * FROM login";
+         //   String query = "SELECT * FROM login";
 
         } catch (ClassNotFoundException  ex) {
             System.err.println("No class found Exception" + ex.getMessage());
