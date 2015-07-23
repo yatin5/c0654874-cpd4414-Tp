@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author HP
+ * @author HP-c0654874
  */
 public class LoginDatabase {
     
