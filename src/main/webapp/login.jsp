@@ -89,7 +89,7 @@
 				
 		</table>
 		<input type="submit" value="Login!"/>
-                <a href="index.html"<input type="submit" value="Logout"/></a>
+               
                 
 	</form>
                             </div>
