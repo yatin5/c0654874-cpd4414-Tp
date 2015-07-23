@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>The Cycle Store</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
         <div id="header">
