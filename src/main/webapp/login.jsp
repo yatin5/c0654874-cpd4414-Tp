@@ -9,9 +9,47 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>The cycle Store</title>
+        
+	<title>The Cycle Store</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
+        <div id="header">
+		<div>
+			<div id="navigation">
+				<div class="infos">
+					<a href="index.html">Cart</a> <a href="index.html">0 items</a>
+				</div>
+				<div>
+					<a href="login.jsp">Login</a> <a href="index.html">Register</a>
+				</div>
+				<ul id="primary">
+					<li class="selected">
+						<a href="index.html"><span>Home</span></a>
+					</li>
+					<li>
+						<a href="about.html"><span>About</span></a>
+					</li>
+					<li>
+						<a href="men.html"><span>Men</span></a>
+					</li>
+				</ul>
+				<ul id="secondary">
+					<li>
+						<a href="women.html"><span>Women</span></a>
+					</li>
+					<li>
+						<a href="blog.html"><span>Blog</span></a>
+					</li>
+					<li>
+						<a href="contact.html"><span>Contact</span></a>
+					</li>
+				</ul>
+			</div>
+			<a href="index.html" id="logo"><img src="images/logo.png" alt="LOGO"></a>
+		</div>
+	</div>
+        <div id="adbox">
          <form action="Login" method="get">
 		<table>
 			<tr>
@@ -24,7 +62,7 @@
     
     
     %>
-    <%= session.getAttribute("User") %>
+    
     
                                  <td>User</td>
                                 <td><input type="text" name="user" /></td>
@@ -52,5 +90,6 @@
 		</table>
 		<input type="submit" value="Login!"/>
 	</form>
+                            </div>
     </body>
 </html>
