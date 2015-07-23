@@ -25,9 +25,13 @@
     
    // Class.forName("com.mysql.jdbc.Driver");
     Connection conn = database.LoginDatabase.getConnection();
-    Statement st = conn.createStatement();
+    if(conn != null){
+        out.println("success");
+    }
+    else{out.println("fail");}
+    Statement s = conn.createStatement();
     //ResultSet rs;
-    int i = st.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "'");
+    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "'");
     if (i > 0) {
         //session.setAttribute("userid", user);
  //       response.sendRedirect("welcome.jsp");
