@@ -65,19 +65,20 @@ public class Login extends HttpServlet {
                 HttpSession session= request.getSession(true);
                
                 session.setAttribute("User", id);
-              
-            if(session.getAttribute("user") == null){
-            response.sendRedirect("login.html");
-            }else{
-                user = (String) session.getAttribute("user");
-                RequestDispatcher rd = request.getRequestDispatcher("index.html");
-                
-                rd.forward(request, response);
-            }
                 //session.setAttribute("Password", id2);
 //                
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+              
+                rd.forward(request, response);
                 
+                 if(session.getAttribute("user") == null){
+            response.sendRedirect("login.html");
+            }else {
+                     user = (String) session.getAttribute("user");
+                     out.println("you are already logged in");
+                }
                } 
+            
         
             
 //            if( name.equalsIgnoreCase(name) && pass.equalsIgnoreCase(pass)){
