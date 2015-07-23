@@ -54,7 +54,7 @@
             <table border="1" width="30%" cellpadding="5">
                 <thead>
                     <tr>
-                        <h2>Enter Information Here</h2>
+                        <h1>Enter Information Here</h1>
                     </tr>
                 </thead>
                 <tbody>
