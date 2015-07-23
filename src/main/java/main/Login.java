@@ -5,7 +5,7 @@
  */
 package main;
 
-import static main.LoginDatabase.getConnection;
+import database.LoginDatabase;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,6 +41,15 @@ public class Login extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+            Connection conn =  LoginDatabase.getConnection();
+            if(conn !=null){
+                out.println("Connection successful");
+            }
+            else {
+                out.println("Try again!!!!");
+            }
+        
+        
         try {
             String name = request.getParameter("user");
             String pass = request.getParameter("pass");
@@ -61,13 +70,7 @@ public class Login extends HttpServlet {
                   out.println("Login Failed");
                }
             
-            Connection conn = getConnection();
-            if(conn !=null){
-                out.println("Connection successful");
-            }
-            else {
-                out.println("Try again!!!!");
-            }
+        
             
 //            if( name.equalsIgnoreCase(name) && pass.equalsIgnoreCase(pass)){
 //                
