@@ -53,7 +53,7 @@
          <form action="Login" method="get">
 		<table>
 			<tr>
-                            
+                            <h1>LOGIN HERE!</h1>
                             <%
                             
                             
@@ -89,6 +89,7 @@
 				
 		</table>
 		<input type="submit" value="Login!"/>
+                <input type="reset" value ="Reset"/>
 	</form>
                             </div>
     </body>

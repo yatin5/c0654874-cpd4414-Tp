@@ -4,16 +4,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>main.Login</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>signup</servlet-name>
-        <servlet-class>main.signup</servlet-class>
-    </servlet>
+    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>signup</servlet-name>
-        <url-pattern>/signup</url-pattern>
-    </servlet-mapping>
+   
 </web-app>
