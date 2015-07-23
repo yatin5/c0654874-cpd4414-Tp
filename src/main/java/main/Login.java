@@ -62,11 +62,11 @@ public class Login extends HttpServlet {
             }
                if(id != null) {
                      
-                HttpSession session= request.getSession();
-                
-                session.setAttribute("xxx", user);
-                session.setAttribute("yyy", password);
-                
+//                HttpSession session= request.getSession();
+//                
+//                session.setAttribute("xxx", user);
+//                session.setAttribute("yyy", password);
+//                
                 RequestDispatcher rd = request.getRequestDispatcher("index.html");
                 
                 rd.forward(request, response);
