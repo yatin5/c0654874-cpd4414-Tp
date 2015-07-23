@@ -9,6 +9,7 @@ import static main.LoginDatabase.getConnection;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -60,7 +61,13 @@ public class Login extends HttpServlet {
                    System.out.println("Login Failed");
                }
             
-            
+            Connection conn = getConnection();
+            if(conn !=null){
+                System.out.println("Connection successful");
+            }
+            else {
+                System.out.println("Try again!!!!");
+            }
             
 //            if( name.equalsIgnoreCase(name) && pass.equalsIgnoreCase(pass)){
 //                
