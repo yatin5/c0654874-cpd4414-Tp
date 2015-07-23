@@ -39,19 +39,24 @@ public class register extends HttpServlet {
         PrintWriter out = response.getWriter();
        
          Connection conn =  LoginDatabase.getConnection();
-        try {
+       if(conn != null){
+                out.println("success");
+            }
+       else {out.println("failed");}
+         try {
             
             
-    String user = request.getParameter("uname");    
-    String pwd = request.getParameter("pass");
+    String user = request.getParameter("user");    
+    String password = request.getParameter("password");
     String fname = request.getParameter("fname");
     String lname = request.getParameter("lname");
     String email = request.getParameter("email");
    
    
     Statement s = conn.createStatement();
+   
     //ResultSet rs;
-    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "', CURDATE())");
+    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "', CURDATE())");
     if (i > 0) {
         //session.setAttribute("userid", user);
         response.sendRedirect("contact.html");
