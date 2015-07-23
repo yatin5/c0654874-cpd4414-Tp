@@ -9,6 +9,7 @@ import database.LoginDatabase;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -39,25 +40,27 @@ public class register extends HttpServlet {
         PrintWriter out = response.getWriter();
        
          Connection conn =  LoginDatabase.getConnection();
-       if(conn != null){
-                out.println("success");
-            }
-       else {out.println("failed");}
+//       if(conn != null){
+//                out.println("success");
+//            }
+//       else {out.println("failed");}
          try {
             
-            
-    String user = request.getParameter("user");    
-    String password = request.getParameter("password");
+    String user = request.getParameter("uname");    
+    String password = request.getParameter("pass");
     String fname = request.getParameter("fname");
     String lname = request.getParameter("lname");
     String email = request.getParameter("email");
    
    
     Statement s = conn.createStatement();
+  
    
     //ResultSet rs;
-    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "', CURDATE())");
-    if (i > 0) {
+    String update = "insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "', CURDATE())";
+             ResultSet r = s.executeQuery(update);
+             out.println(update);
+    if(r != null) {
         //session.setAttribute("userid", user);
         response.sendRedirect("contact.html");
        // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
