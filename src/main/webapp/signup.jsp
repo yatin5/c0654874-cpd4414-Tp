@@ -79,11 +79,11 @@
                         <td><input type="password" name="pass" value="" /></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Submit" /></td>
-                        <td><input type="reset" value="Reset" /></td>
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Reset" />
                     </tr>
                     <tr>
-                        <td colspan="2">Already registered!! <a href="index.html">Go to main page!</a></td>
+                        <h2>Already registered!! <a href="index.html">Go to main page!</a></h2>
                     </tr>
                 </tbody>
             </table>

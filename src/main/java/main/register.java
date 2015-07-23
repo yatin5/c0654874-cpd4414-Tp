@@ -51,11 +51,15 @@ public class register extends HttpServlet {
     String lname = request.getParameter("lname");
     String email = request.getParameter("email");
    
+    
+    out.println(user);
+    out.println(password);
+    out.println(fname);
+    out.println(lname);
+    out.println(email);
    
     Statement s = conn.createStatement();
   
-   
-    //ResultSet rs;
     int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
     if (i > 0) {
         //session.setAttribute("userid", user);
@@ -63,11 +67,7 @@ public class register extends HttpServlet {
        out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {
         response.sendRedirect("index.html");
-    }
-            
-            
-            
-          
+    }        
         } finally {
             out.close();
         }
