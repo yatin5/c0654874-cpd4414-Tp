@@ -9,6 +9,7 @@ import database.LoginDatabase;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -60,10 +61,25 @@ public class register extends HttpServlet {
     out.println(email);
    
     Statement s = conn.createStatement();
-  
-            int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
-   out.println(update);
-    if (update > 0) {
+          String userid = null;
+          String pass;
+          String first;
+          String last;
+          String mail;
+          String update = "insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'"; 
+//            int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
+
+            //out.println(update);
+            ResultSet r = s.executeQuery(update);
+            while(r.next()){
+                userid = r.getString("userid");
+                pass = r.getString("password");
+                first = r.getString("firstname");
+                last = r.getString("lasttname");
+                mail = r.getString("email");
+            }
+            
+    if (userid != null) {
         //session.setAttribute("userid", user);
       //  response.sendRedirect("contact.html");
        out.print("Registration Successfull!"+"<a href='index.html'>Go to Login</a>");
