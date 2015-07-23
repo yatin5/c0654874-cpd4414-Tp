@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
             Statement s = null;
             String id= null;
             String id2 = null;
-            String query = "select userid,password from login where username = '"+name+"' and password = '"+pass+"'";
+            String query = "select userid,password from login where usernid = '"+name+"' and password = '"+pass+"'";
             ResultSet set = s.executeQuery(query);
             
             while(set.next()){
