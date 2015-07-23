@@ -9,7 +9,6 @@ import database.LoginDatabase;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -55,17 +54,19 @@ public class register extends HttpServlet {
    
     Statement s = conn.createStatement();
   
-    String update = "insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "')";
-             ResultSet r = s.executeQuery(update);
-             out.println(update);
-    if(r != null) {
+   
+    //ResultSet rs;
+    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "', CURDATE())");
+    if (i > 0) {
         //session.setAttribute("userid", user);
         response.sendRedirect("contact.html");
        // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {
         response.sendRedirect("index.html");
     }
-    
+            
+            
+            
           
         } finally {
             out.close();
