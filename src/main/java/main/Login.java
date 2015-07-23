@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
      */
        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        response.setContentType("text/html;charset=UTF-8");
+       // response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
             Connection conn =  LoginDatabase.getConnection();
            
@@ -49,13 +49,13 @@ public class Login extends HttpServlet {
             String user = request.getParameter("user");
             String password = request.getParameter("password");
                   //  out.println(name);
-            Statement s = null;
+            Statement s = conn.createStatement();
             String id= null;
             String id2 = null;
             String query = "select userid,password from login where userid = '"+user+"' and password = '"+password+"'";
            
             ResultSet set = s.executeQuery(query);
-             out.println(set);
+            // out.println(set);
             while(set.next()){
                 id = set.getString("userid");
                 id2 = set.getString("password");
