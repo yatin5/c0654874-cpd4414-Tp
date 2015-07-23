@@ -39,11 +39,11 @@ public class register extends HttpServlet {
         //response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
        
-         Connection conn =  LoginDatabase.getConnection();
-//       if(conn != null){
-//                out.println("success");
-//            }
-//       else {out.println("failed");}
+         Connection conn =  database.LoginDatabase.getConnection();
+       if(conn != null){
+                out.println("success");
+            }
+       else {out.println("failed");}
          try {
             
     String user = request.getParameter("uname");    
@@ -53,11 +53,11 @@ public class register extends HttpServlet {
     String email = request.getParameter("email");
    
     
-//    out.println(user);
-//    out.println(password);
-//    out.println(fname);
-//    out.println(lname);
-//    out.println(email);
+    out.println(user);
+    out.println(password);
+    out.println(fname);
+    out.println(lname);
+    out.println(email);
    
     Statement s = conn.createStatement();
   
