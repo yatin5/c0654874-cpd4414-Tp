@@ -56,17 +56,17 @@ public class Login extends HttpServlet {
                 id2 = set.getString("id2");
             }
                if(id != null) {
-                   System.out.println("Login Successful");
+                   out.println("Login Successful");
                } else{
-                   System.out.println("Login Failed");
+                  out.println("Login Failed");
                }
             
             Connection conn = getConnection();
             if(conn !=null){
-                System.out.println("Connection successful");
+                out.println("Connection successful");
             }
             else {
-                System.out.println("Try again!!!!");
+                out.println("Try again!!!!");
             }
             
 //            if( name.equalsIgnoreCase(name) && pass.equalsIgnoreCase(pass)){
