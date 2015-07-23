@@ -61,7 +61,15 @@ public class Login extends HttpServlet {
                 id2 = set.getString("password");
             }
                if(id != null) {
-                   out.println("Login Successful");
+                     
+                HttpSession session= request.getSession();
+                
+                session.setAttribute("xxx", user);
+                session.setAttribute("yyy", password);
+                
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+                
+                rd.forward(request, response);
                } else{
                   out.println("Login Failed");
                }
