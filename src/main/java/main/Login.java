@@ -70,32 +70,15 @@ public class Login extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("index.html");
               
                 rd.forward(request, response);
-                
-                 if(session.getAttribute("user") == null){
-            response.sendRedirect("login.html");
-            }else {
-                     user = (String) session.getAttribute("user");
-                     out.println("you are already logged in");
-                }
+//                
+//                 if(session.getAttribute("user") == null){
+//            response.sendRedirect("login.html");
+//            }else {
+//                     user = (String) session.getAttribute("user");
+//                     out.println("you are already logged in");
+//                }
                } 
             
-        
-            
-//            if( name.equalsIgnoreCase(name) && pass.equalsIgnoreCase(pass)){
-//                
-//                HttpSession session= request.getSession();
-//                
-//                session.setAttribute("xxx", name);
-//                session.setAttribute("yyy", pass);
-//                
-//                RequestDispatcher rd = request.getRequestDispatcher("index.html");
-//                
-//                rd.forward(request, response);
-//            }
-//            else {
-//               RequestDispatcher rd = request.getRequestDispatcher("login.html");
-//               rd.include(request, response);
-//            }
         } finally{
             out.close();
         }
