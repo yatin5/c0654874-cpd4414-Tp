@@ -22,8 +22,8 @@ public class LoginDatabase {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String jdbc = "jdbc:mysql://127.5.207.2:3306/cyclestore";
-            String user = "root";
-            String pass = "";
+            String user = "admineqdpQRl";
+            String pass = "vfdRzdNwgM-h";
             conn = DriverManager.getConnection(jdbc, user, pass);
          //   String query = "SELECT * FROM login";
 
