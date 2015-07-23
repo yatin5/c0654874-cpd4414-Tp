@@ -71,7 +71,7 @@
 				<td>password</td>
 				<td><input type="password" name="password" /></td>
 			</tr>
-                        <input type="submit" value="Login!"/>
+                       
                         <%
            //response.sendRedirect("login.html");
             }else {
@@ -86,7 +86,9 @@
                 }
                             
                             %>
-				<a href="index.html"<input type="submit" value="Logout"/></a>
+			 <input type="submit" value="Login!"/>	
+                            <a href="index.html"<input type="submit" value="Logout"/></a>
+                                
 		</table>
 		
                 
