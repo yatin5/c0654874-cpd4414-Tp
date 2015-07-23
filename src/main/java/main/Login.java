@@ -21,30 +21,34 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 	  Connection conn = null;	
+            
             try {
                 conn = getConnection();
             } catch (SQLException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("not getting connection");
             }
+            
             Statement s = null;
+            
             try {
                 s = conn.createStatement();
             } catch (SQLException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("ststement is not processing");
             }
+             
 String user = req.getParameter("user"); 
-String pass = req.getParameter("Password"); 
+String pass = req.getParameter("pass"); 
 String id=null; String userId=null; String sql = "SELECT id, userId, password FROM login where username='"+user+"' and password='"+pass+"'"; 
 ResultSet rs = null; 
             try {
                 rs = s.executeQuery(sql);
             } catch (SQLException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("no query found");
             }
             try {
                 while(rs.next()) { id=rs.getString("id"); userId=rs.getString("userId"); }
             } catch (SQLException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("no id exixt");
             }
 
  if(id!=null) {
