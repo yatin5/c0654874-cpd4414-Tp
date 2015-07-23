@@ -53,6 +53,7 @@ public class Login extends HttpServlet {
             String id= null;
             String id2 = null;
             String query = "select userid,password from login where userid = '"+name+"' and password = '"+pass+"'";
+            out.println(query);
             ResultSet set = s.executeQuery(query);
             
             while(set.next()){
