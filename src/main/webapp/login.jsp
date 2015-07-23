@@ -53,7 +53,7 @@
          <form action="Login" method="get">
 		<table>
 			<tr>
-                            <h1>LOGIN HERE!</h1>
+                           
                             <%
                             
                             
@@ -62,7 +62,7 @@
     
     
     %>
-    
+     <h1>LOGIN HERE!</h1>
     
                                  <td>User</td>
                                 <td><input type="text" name="user" /></td>
