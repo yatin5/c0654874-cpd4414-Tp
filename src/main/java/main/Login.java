@@ -43,6 +43,7 @@ public class Login extends HttpServlet {
         try {
             String name = request.getParameter("user");
             String pass = request.getParameter("pass");
+                    out.println(name);
             Statement s = null;
             String id= null;
             String id2 = null;
