@@ -49,7 +49,7 @@
 		</div>
 	</div>
      <div id="adbox">
-     <form method="post" action="register">
+     <form method="post" action="Register.jsp">
             <center>
             <table border="1" width="30%" cellpadding="5">
                 <thead>

@@ -32,6 +32,7 @@ public class register extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -60,7 +61,7 @@ public class register extends HttpServlet {
    
     Statement s = conn.createStatement();
   
-    int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
+            int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
    out.println(update);
     if (update > 0) {
         //session.setAttribute("userid", user);
