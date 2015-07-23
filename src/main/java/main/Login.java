@@ -42,12 +42,7 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
             Connection conn =  LoginDatabase.getConnection();
-            if(conn !=null){
-                out.println("Connection successful");
-            }
-            else {
-                out.println("Try again!!!!");
-            }
+           
         
         
         try {
@@ -57,7 +52,7 @@ public class Login extends HttpServlet {
             Statement s = null;
             String id= null;
             String id2 = null;
-            String query = "select userid,pasword from login where userid = "+name+" and password = "+pass+"";
+            String query = "select userid,password from login where username = "+name+" and password = "+pass+"";
             ResultSet set = s.executeQuery(query);
             
             while(set.next()){
