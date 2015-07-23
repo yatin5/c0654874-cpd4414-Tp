@@ -19,12 +19,12 @@
                             <%
                             
                             
-                             if(session.getAttribute("user") == null){
+                             if(session.getAttribute("User") == null){
 
     
     
     %>
-    <%= session.getAttribute("user") %>
+    <%= session.getAttribute("User") %>
     
                                  <td>User</td>
                                 <td><input type="text" name="user" /></td>
