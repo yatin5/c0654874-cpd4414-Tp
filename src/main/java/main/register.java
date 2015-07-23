@@ -55,9 +55,7 @@ public class register extends HttpServlet {
    
     Statement s = conn.createStatement();
   
-   
-    //ResultSet rs;
-    String update = "insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "', CURDATE())";
+    String update = "insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "')";
              ResultSet r = s.executeQuery(update);
              out.println(update);
     if(r != null) {
@@ -67,9 +65,7 @@ public class register extends HttpServlet {
     } else {
         response.sendRedirect("index.html");
     }
-            
-            
-            
+    
           
         } finally {
             out.close();
