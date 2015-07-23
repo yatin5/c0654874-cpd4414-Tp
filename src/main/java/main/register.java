@@ -56,11 +56,11 @@ public class register extends HttpServlet {
   
    
     //ResultSet rs;
-    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "', CURDATE())");
+    int i = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
     if (i > 0) {
         //session.setAttribute("userid", user);
-        response.sendRedirect("contact.html");
-       // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
+      //  response.sendRedirect("contact.html");
+       out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {
         response.sendRedirect("index.html");
     }
