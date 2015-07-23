@@ -68,8 +68,9 @@ public class Login extends HttpServlet {
               
             if(session.getAttribute("user") == null){
             response.sendRedirect("login.html");
-            }else user = (String) session.getAttribute("user");
-}
+            }else{
+                user = (String) session.getAttribute("user");
+            }
                 //session.setAttribute("Password", id2);
 //                
                 RequestDispatcher rd = request.getRequestDispatcher("index.html");
