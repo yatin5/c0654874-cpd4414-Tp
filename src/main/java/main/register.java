@@ -9,6 +9,7 @@ import database.LoginDatabase;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -59,17 +60,22 @@ public class register extends HttpServlet {
 //    out.println(lname);
 //    out.println(email);
    
-    Statement s = conn.createStatement();
-  
-            int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
-  // out.println(update);
-    if (update > 0) {
-        //session.setAttribute("userid", user);
-      //  response.sendRedirect("contact.html");
-       out.print("Registration Successfull!"+"<a href='index.html'>Go to Login</a>");
-    } else {
-        response.sendRedirect("index.html");
-    }        
+   PreparedStatement ps=conn.prepareStatement
+                  ("insert into Student values(?,?,?)");
+
+        ps.setString(1, fname);
+        ps.setString(2, lname);
+        ps.setString(3, email);
+        ps.setString(4, user);
+        ps.setString(5, password);
+        int i=ps.executeUpdate();
+        
+          if(i>0)
+          {
+            out.println("You are sucessfully registered");
+          }
+        
+        
         } catch(Exception e) {
             out.println(e.getMessage());
             out.close();
