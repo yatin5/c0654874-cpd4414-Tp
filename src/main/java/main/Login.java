@@ -70,12 +70,13 @@ public class Login extends HttpServlet {
             response.sendRedirect("login.html");
             }else{
                 user = (String) session.getAttribute("user");
-            }
-                //session.setAttribute("Password", id2);
-//                
                 RequestDispatcher rd = request.getRequestDispatcher("index.html");
                 
                 rd.forward(request, response);
+            }
+                //session.setAttribute("Password", id2);
+//                
+                
                } 
         
             
