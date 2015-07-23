@@ -9,7 +9,6 @@ import database.LoginDatabase;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -41,10 +40,10 @@ public class register extends HttpServlet {
         PrintWriter out = response.getWriter();
        
          Connection conn =  database.LoginDatabase.getConnection();
-       if(conn != null){
-                out.println("success");
-            }
-       else {out.println("failed");}
+//       if(conn != null){
+//                out.println("success");
+//            }
+//       else {out.println("failed");}
          try {
             
     String user = request.getParameter("uname");    
@@ -54,39 +53,25 @@ public class register extends HttpServlet {
     String email = request.getParameter("email");
    
     
-    out.println(user);
-    out.println(password);
-    out.println(fname);
-    out.println(lname);
-    out.println(email);
+//    out.println(user);
+//    out.println(password);
+//    out.println(fname);
+//    out.println(lname);
+//    out.println(email);
    
     Statement s = conn.createStatement();
-          String userid = null;
-          String pass;
-          String first;
-          String last;
-          String mail;
-          String update = "insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'"; 
-//            int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
-
-            //out.println(update);
-            ResultSet r = s.executeQuery(update);
-            while(r.next()){
-                userid = r.getString("userid");
-                pass = r.getString("password");
-                first = r.getString("firstname");
-                last = r.getString("lasttname");
-                mail = r.getString("email");
-            }
-            
-    if (userid != null) {
+  
+            int update = s.executeUpdate("insert into login(firstname, lastname, email, userid, password) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + password + "'");
+  // out.println(update);
+    if (update > 0) {
         //session.setAttribute("userid", user);
       //  response.sendRedirect("contact.html");
        out.print("Registration Successfull!"+"<a href='index.html'>Go to Login</a>");
     } else {
         response.sendRedirect("index.html");
     }        
-        } finally {
+        } catch(Exception e) {
+            out.println(e.getMessage());
             out.close();
         }
     }
