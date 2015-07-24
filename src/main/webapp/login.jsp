@@ -71,7 +71,10 @@
 				<td>password</td>
 				<td><input type="password" name="password" /></td>
 			</tr>
-                        
+                        <tr>
+                        <input type="submit" value="Login!"/>
+                        <input type="reset" value ="Reset"/>
+                        </tr>
                         <%
            //response.sendRedirect("login.html");
             }else {
@@ -81,18 +84,18 @@
                                  %>
                         
                         <h1>You are already logged in</h1>
+                        <a href="lougou.jsp"> <input type="submit" value="Logout"/></a>
                         
                         <%
                 }
                             
                             %>
                              <tr>
-                        <td colspan="2">Yet Not Registered!! <a href="signup.jsp">Register Here</a></td>
+                                 <td colspan="2">Yet Not Registered!! <a href="signup.jsp"><input type="submit" value="Register Here"></a></td>
                     </tr>
 				
 		</table>
-		<input type="submit" value="Login!"/>
-                <input type="reset" value ="Reset"/>
+		
 	</form>
                             </div>
     </body>
