@@ -95,8 +95,8 @@
 		
 		
 	</form>
-                             <a href='logout.jsp'> <input type="submit" value="Logout"/></a>
-                        <a href='signup.jsp'><input type="submit" value="Register Here"></a>
+<!--                             <a href='logout.jsp'> <input type="submit" value="Logout"/></a>
+                        <a href='signup.jsp'><input type="submit" value="Register Here"></a>-->
                             </div>
     </body>
 </html>
