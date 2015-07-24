@@ -15,7 +15,7 @@
        <%
             session.setAttribute("userid", null);
             session.invalidate();
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.html");
         %>
     </body>
 </html>
