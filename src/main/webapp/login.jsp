@@ -50,7 +50,7 @@
 		</div>
 	</div>
         <div id="adbox">
-         <form action="Login" method="get">
+         <form action="Login" method="post">
 		<table>
 			<tr>
                            
