@@ -5,8 +5,6 @@ package database;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,8 +14,8 @@ import java.sql.SQLException;
  * @author HP-c0654874
  */
 public class LoginDatabase {
-    
-      public static Connection getConnection() throws SQLException {
+
+    public static Connection getConnection() throws SQLException {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -25,9 +23,9 @@ public class LoginDatabase {
             String user = "admineqdpQRl";
             String pass = "vfdRzdNwgM-h";
             conn = DriverManager.getConnection(jdbc, user, pass);
-         //   String query = "SELECT * FROM login";
+            //   String query = "SELECT * FROM login";
 
-        } catch (ClassNotFoundException  ex) {
+        } catch (ClassNotFoundException ex) {
             System.err.println("No class found Exception" + ex.getMessage());
         }
         return conn;

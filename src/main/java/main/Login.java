@@ -37,51 +37,40 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-       protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-       // response.setContentType("text/html;charset=UTF-8");
+        // response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-            Connection conn =  LoginDatabase.getConnection();
-           
-        
-        
+        Connection conn = LoginDatabase.getConnection();
+
         try {
             String user = request.getParameter("user");
             String password = request.getParameter("password");
-                  //  out.println(name);
+            //  out.println(name);
             Statement s = conn.createStatement();
-            String id= null;
+            String id = null;
             String id2 = null;
-            String query = "select userid,password from login where userid = '"+user+"' and password = '"+password+"'";
-           
+            String query = "select userid,password from login where userid = '" + user + "' and password = '" + password + "'";
+
             ResultSet set = s.executeQuery(query);
             // out.println(set);
-            while(set.next()){
+            while (set.next()) {
                 id = set.getString("userid");
                 id2 = set.getString("password");
             }
-               if(id != null) {
-                     
-                   
-                
-                HttpSession session= request.getSession(true);
-               
+            if (id != null) {
+
+                HttpSession session = request.getSession(true);
+
                 session.setAttribute("User", id);
                 //session.setAttribute("Password", id2);
 //                
                 RequestDispatcher rd = request.getRequestDispatcher("index.html");
-              
+
                 rd.forward(request, response);
-//                
-//                 if(session.getAttribute("user") == null){
-//            response.sendRedirect("login.html");
-//            }else {
-//                     user = (String) session.getAttribute("user");
-//                     out.println("you are already logged in");
-//                }
-               } 
-            
-        } finally{
+            }
+
+        } finally {
             out.close();
         }
     }
@@ -98,11 +87,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           try {
-               processRequest(request, response);
-           } catch (SQLException ex) {
-               Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-           }
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -116,11 +105,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           try {
-               processRequest(request, response);
-           } catch (SQLException ex) {
-               Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-           }
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

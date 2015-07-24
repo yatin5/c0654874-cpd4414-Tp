@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <title>The Cycle Store</title>
+        <title>The Cycle Store</title>
     </head>
     <body>
-       <%
+        <%
             session.setAttribute("userid", null);
             session.invalidate();
             response.sendRedirect("index.html");
