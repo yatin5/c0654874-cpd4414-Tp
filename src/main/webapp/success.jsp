@@ -50,6 +50,20 @@
         <div id="adbox">
                              <a href='logout.jsp'> <input type="submit" value="Logout"/></a>
                         <a href='signup.jsp'><input type="submit" value="Register Here"></a>
+                        
+                        
+                        <%
+    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+%>
+You are not logged in<br/>
+<a href="index.html">Please Login</a>
+<%} else {
+%>
+Welcome <%=session.getAttribute("userid")%>
+<a href='logout.jsp'>Log out</a>
+<%
+    }
+%>
         </div>
     </body>
 </html>
