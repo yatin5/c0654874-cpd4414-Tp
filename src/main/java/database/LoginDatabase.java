@@ -32,5 +32,4 @@ public class LoginDatabase {
         }
         return conn;
     }
-    
 }

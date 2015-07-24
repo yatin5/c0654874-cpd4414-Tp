@@ -75,6 +75,7 @@
                         <input type="submit" value="Login!"/>
                         <input type="reset" value ="Reset"/>
                         </tr>
+                        </table>
                         <%
            //response.sendRedirect("login.html");
             }else {
@@ -84,17 +85,15 @@
                                  %>
                         
                         <h1>You are already logged in</h1>
-                        <a href="lougou.jsp"> <input type="submit" value="Logout"/></a>
-                        
+                        <a href="logout.jsp"> <input type="submit" value="Logout"/></a>
+                        <a href="signup.jsp"><input type="submit" value="Register Here"></a>
                         <%
                 }
                             
                             %>
-                             <tr>
-                                 <td colspan="2">Yet Not Registered!! <a href="signup.jsp"><input type="submit" value="Register Here"></a></td>
-                    </tr>
+                     
 				
-		</table>
+		
 		
 	</form>
                             </div>
