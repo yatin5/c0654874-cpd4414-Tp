@@ -61,7 +61,7 @@ public class register extends HttpServlet {
 //    out.println(email);
    
    PreparedStatement ps=conn.prepareStatement
-                  ("insert into Student values(?,?,?)");
+                  ("insert into Student values(?,?,?,?,?)");
 
         ps.setString(1, fname);
         ps.setString(2, lname);
