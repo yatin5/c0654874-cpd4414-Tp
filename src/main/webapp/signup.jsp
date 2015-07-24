@@ -20,7 +20,12 @@
 					<a href="index.html">Cart</a> <a href="index.html">0 items</a>
 				</div>
 				<div>
-					<a href="login.jsp">Login</a> <a href="index.html">Register</a>
+					<a href="login.jsp">Login</a> 
+                                        <a href="index.html">Register</a>
+                                        
+                                        <%
+                                            %>
+                                          <a href="logout.jsp">Logout</a> 
 				</div>
 				<ul id="primary">
 					<li class="selected">
@@ -49,6 +54,11 @@
 		</div>
 	</div>
      <div id="adbox">
+         
+         <%
+            
+             
+             %>
      <form method="post" action="register">
             <center>
             <table border="1" width="30%" cellpadding="5">
@@ -83,7 +93,7 @@
                         <input type="reset" value="Reset" />
                     </tr>
                     <tr>
-                        <h2>Already registered!! <a href="index.html">Go to main page!</a></h2>
+                        <h2> If you are Already registered!! <a href="index.html">Go to home page!</a></h2>
                     </tr>
                 </tbody>
             </table>
