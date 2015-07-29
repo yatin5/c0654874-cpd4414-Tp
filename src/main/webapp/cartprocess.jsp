@@ -38,7 +38,7 @@
  if(c > 0)
  {
         //session.setAttribute("userid", user);
-        response.sendRedirect("cart.jsp");
+        response.sendRedirect("success.jsp");
        // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {
         response.sendRedirect("login.jsp");
