@@ -3,6 +3,7 @@
     Created on : Jul 27, 2015, 8:18:02 PM
     Author     : HP
 --%>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="database.LoginDatabase" %>%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -15,19 +16,22 @@
     </head>
     <body>
         <%
+             PrintWriter o = response.getWriter();
+              Connection conn = database.LoginDatabase.getConnection();
+    if(conn != null){
+        o.println("success");
+    }
+    else{
+        o.println("failed");
+    }
+             try{
     String username = request.getParameter("user");   
     String image = request.getParameter("image");
     String price = request.getParameter("price");
     String description = request.getParameter("description");
 
    
-    Connection conn = database.LoginDatabase.getConnection();
-    if(conn != null){
-        out.println("success");
-    }
-    else{
-        out.println("failed");
-    }
+   
     Statement st = conn.createStatement();
     //ResultSet rs;
  int c = st.executeUpdate("insert into cart values ('" + username + "','" + image + "','" + price + "','" + description + "')"); 
@@ -38,7 +42,10 @@
        // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {
         response.sendRedirect("login.jsp");
-    }
+    }}catch(Exception e){
+        o.println(e.getMessage());
+        o.close();
+}
 %>
     </body>
 </html>
