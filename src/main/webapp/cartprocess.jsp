@@ -20,11 +20,17 @@
     String price = request.getParameter("price");
     String description = request.getParameter("description");
 
-    Class.forName("com.mysql.jdbc.Driver");
+   
     Connection conn = database.LoginDatabase.getConnection();
+    if(conn != null){
+        out.println("success");
+    }
+    else{
+        out.println("failed");
+    }
     Statement st = conn.createStatement();
     //ResultSet rs;
- int c = st.executeUpdate("insert into cart ('userid', 'image', 'price', 'description') values ('" + username + "','" + image + "','" + price + "','" + description + "')"); 
+ int c = st.executeUpdate("insert into cart values ('" + username + "','" + image + "','" + price + "','" + description + "')"); 
  if(c > 0)
  {
         //session.setAttribute("userid", user);
