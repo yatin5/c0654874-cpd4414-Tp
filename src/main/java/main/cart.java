@@ -78,11 +78,12 @@ public class cart extends HttpServlet {
             {
                  PreparedStatement ps=conn.prepareStatement
                   ("insert into cart values(?,?,?,?,?,?)");
-        ps.setString(1, user_id);
-        ps.setString(2, imageid);
-        ps.setString(3, cname);
-        ps.setString(4, price);
-        ps.setString(5, description);
+        ps.setString(1,"");
+        ps.setString(2, user_id);
+        ps.setString(3, imageid);
+        ps.setString(4, cname);
+        ps.setString(5, price);
+        ps.setString(6, description);
         
         int i=ps.executeUpdate();
         
