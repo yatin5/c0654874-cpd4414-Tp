@@ -39,44 +39,39 @@ public class register extends HttpServlet {
             throws ServletException, IOException, SQLException {
         //response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-       
-         Connection conn =  database.LoginDatabase.getConnection();
+
+        Connection conn = database.LoginDatabase.getConnection();
 //       if(conn != null){
 //                out.println("success");
 //            }
 //       else {out.println("failed");}
-         try {
-            
-    String user = request.getParameter("uname");    
-    String password = request.getParameter("pass");
-    String fname = request.getParameter("fname");
-    String lname = request.getParameter("lname");
-    String email = request.getParameter("email");
-   
-    
+        try {
+
+            String user = request.getParameter("uname");
+            String password = request.getParameter("pass");
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
+            String email = request.getParameter("email");
+
 //    out.println(user);
 //    out.println(password);
 //    out.println(fname);
 //    out.println(lname);
 //    out.println(email);
-   
-   PreparedStatement ps=conn.prepareStatement
-                  ("insert into login values(?,?,?,?,?)");
+            PreparedStatement ps = conn.prepareStatement("insert into login values(?,?,?,?,?)");
 
-        ps.setString(1, fname);
-        ps.setString(2, lname);
-        ps.setString(3, email);
-        ps.setString(4, user);
-        ps.setString(5, password);
-        int i=ps.executeUpdate();
-        
-          if(i>0)
-          {
-            out.println("You are sucessfully registered");
-          }
-        
-        
-        } catch(Exception e) {
+            ps.setString(1, fname);
+            ps.setString(2, lname);
+            ps.setString(3, email);
+            ps.setString(4, user);
+            ps.setString(5, password);
+            int i = ps.executeUpdate();
+
+            if (i > 0) {
+                out.println("You are sucessfully registered");
+            }
+
+        } catch (Exception e) {
             out.println(e.getMessage());
             out.close();
         }

@@ -36,7 +36,7 @@ public class cart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        // response.setContentType("text/html;charset=UTF-8");
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -51,53 +51,46 @@ public class cart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       // processRequest(request, response);
+        // processRequest(request, response);
         HttpSession session = request.getSession();
 
-    
         String user_id = (String) session.getAttribute("User");
         PrintWriter out = response.getWriter();
         try {
-          Connection conn = database.LoginDatabase.getConnection();
-          
-          String imageid_new = request.getParameter("imgid");
-          String cname = request.getParameter("path");
-          String price_new = request.getParameter("cost");
-          String description = request.getParameter("imgdesc");
-         
-        int price = Integer.parseInt(price_new);
-        int imageid =  Integer.parseInt(imageid_new);
-            out.println(description);
-            
-          
-           
-                   
-            if(user_id == null){
+            Connection conn = database.LoginDatabase.getConnection();
+
+            String imageid_new = request.getParameter("imgid");
+            String cname = request.getParameter("path");
+            String price_new = request.getParameter("cost");
+            String description = request.getParameter("imgdesc");
+
+            int price = Integer.parseInt(price_new);
+            int imageid = Integer.parseInt(imageid_new);
+
+            if (user_id == null) {
                 out.println("Please login first to add to cart!");
                 response.sendRedirect("login.jsp");
+            } else {
+                Statement ps = conn.createStatement();
+                String query = "insert into cart(userid,id,name,description,price) values('" + user_id + "','" + imageid + "','" + cname + "','" + description + "','" + price + "')";
+
+                int i = ps.executeUpdate(query);
+
+                if (i == 1) {
+
+                    out.println("Your cycle added successfully");
+                    response.sendRedirect("index.html");
+                } else {
+                    out.println("It seems you might hot have logged in!!");
+                    response.sendRedirect("login.jsp");
+                }
             }
-            else
-            {
-                 Statement ps=conn.createStatement();
-                  String query = "insert into cart(userid,id,name,description,price) values('"+user_id+"','"+imageid+"','"+cname+"','"+description+"','"+price+"')";
-        
-        
-                    int i=ps.executeUpdate(query);
-        
-          if(i==1)
-          {
-            out.println("Your cycle added successfully");
-          }else
-                  { out.println("no data inserted");}
-            }
-          
-        } catch(Exception e) {
+
+        } catch (Exception e) {
             out.println(e.getMessage());
             out.close();
         }
-    
-    
-    
+
     }
 
     /**
