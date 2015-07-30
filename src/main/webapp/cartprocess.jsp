@@ -82,6 +82,9 @@
       
       %>
       <div id="adbox">
+          <div id="contents">
+			<h1>CYCLES</h1>
+			<ul id="shirts">
            <form action="cart" methdo="get">
       <table>
          
@@ -92,6 +95,9 @@
     <tr><input type="submit" value="Add to cart" class="button"/><tr>
           </table>
      </form>
+    </ul>
+    </div>
+    
       </div>
       <%
     }rs.close();
