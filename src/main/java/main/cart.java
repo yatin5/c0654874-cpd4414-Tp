@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -76,18 +77,13 @@ public class cart extends HttpServlet {
             }
             else
             {
-                 PreparedStatement ps=conn.prepareStatement
-                  ("insert into cart values('userid','id','name','description','price')");
+                 Statement ps=conn.createStatement();
+                  String query = "insert into cart('userid','id','name','description','price') values('"+user_id+"','"+imageid+"','"+cname+"','"+description+"','"+price+"')";
         
-        ps.setString(1, user_id);
-        ps.setString(2, imageid);
-        ps.setString(3, cname);
-        ps.setString(4, price);
-        ps.setString(5, description);
         
-        int i=ps.executeUpdate();
+                    int i=ps.executeUpdate(query);
         
-          if(i>1)
+          if(i==1)
           {
             out.println("Your cycle added successfully");
           }else
