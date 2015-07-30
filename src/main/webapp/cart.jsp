@@ -64,14 +64,24 @@
                 String user_id = (String) session.getAttribute("User");
                 try {
                     if (user_id == null) {
-            %>
-            <h1> Please Login to see your Cycles </h1>
-            <%
+         
                         response.sendRedirect("login.jsp");
                     } else {
                         Statement st = conn.createStatement();
-                        String query = "select * from cart where userid = '"+user_id+"'";
+                        String query = "select userid,name,description,price from cart where userid = '"+user_id+"'";
                         ResultSet rs = st.executeQuery(query);
+                   
+                    if(!rs.next()){
+                            out.println("No Item in cart");
+                           }else{
+                          %> 
+                          <table>
+                              <tr><%= rs.getString(1) %></tr>
+                               <tr><%= rs.getString(3) %></tr>
+                                 <tr><%= rs.getString(4) %></tr>
+                                  <tr><%= rs.getString(5) %></tr>
+                          </table>>
+                      <% } 
                     }
                 } catch (Exception e) {
                     o.println(e.getMessage());
