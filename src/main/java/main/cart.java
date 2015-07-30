@@ -79,7 +79,7 @@ public class cart extends HttpServlet {
             else
             {
                  Statement ps=conn.createStatement();
-                  String query = "insert into cart('userid','id','name','description','price') values('"+user_id+"','"+imageid+"','"+cname+"','"+description+"','"+price+"')";
+                  String query = "insert into cart(userid,id,name,description,price) values('"+user_id+"','"+imageid+"','"+cname+"','"+description+"','"+price+"')";
         
         
                     int i=ps.executeUpdate(query);
