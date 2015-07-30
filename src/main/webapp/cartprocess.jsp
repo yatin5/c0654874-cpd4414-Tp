@@ -87,7 +87,7 @@
       
       %>
       
-      
+      <tr><% o.println(id); %></tr>
     <tr> <% o.println(name);%></tr>
     <tr> <% o.println(price);%></tr>
     <tr> <% o.println(desc);%></tr>
