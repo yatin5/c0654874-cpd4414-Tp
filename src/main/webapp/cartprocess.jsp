@@ -3,6 +3,7 @@
     Created on : Jul 27, 2015, 8:18:02 PM
     Author     : HP
 --%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="database.LoginDatabase" %>%>
 <%@page import="java.sql.Statement"%>
@@ -25,24 +26,30 @@
         o.println("failed");
     }
              try{
-    String username = request.getParameter("user");   
-    String image = request.getParameter("image");
-    String price = request.getParameter("price");
-    String description = request.getParameter("description");
 
-   
-   
-    Statement st = conn.createStatement();
-    //ResultSet rs;
- int c = st.executeUpdate("insert into cart values ('" + username + "','" + image + "','" + price + "','" + description + "')"); 
- if(c > 0)
+   Statement st = conn.createStatement();
+    
+    int id = 0;
+    String name = null;
+    int price = 0;
+    String desc = null;
+    String query = "select * from cycle where id >=1";  
+   ResultSet rs =  st.executeQuery(query);
+ 
+ while(rs.next())
  {
-        //session.setAttribute("userid", user);
-        response.sendRedirect("success.jsp");
-       // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
-    } else {
-        response.sendRedirect("login.jsp");
-    }}catch(Exception e){
+      id = rs.getInt("id");
+      name = rs.getString("name");
+      price = rs.getInt("price");
+      desc  = rs.getString("description");
+      
+      o.println(id);
+      o.println(name);
+      o.println(price);
+      o.println(desc);
+      
+    }rs.close();
+             }catch(Exception e){
         o.println(e.getMessage());
         o.close();
 }
