@@ -75,7 +75,7 @@
     String name = null;
     int price = 0;
     String desc = null;
-    String query = "select * from cycle where id > = 1";  
+    String query = "select * from cycle";  
    ResultSet rs =  st.executeQuery(query);
  
  while(rs.next())
