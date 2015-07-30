@@ -88,7 +88,7 @@
       %>
       <table><form action="" methdo="get">
       <tr><%= id %></tr>
-    <tr> <%= name%></tr>
+      <tr> <img src="<%= name%>"></tr>
     <tr> <%= price %></tr>
     <tr> <%= desc %></tr>
     <tr><input type="submit" value="Add to cart" class="button"/><tr>
