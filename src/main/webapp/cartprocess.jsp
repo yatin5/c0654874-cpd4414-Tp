@@ -57,23 +57,7 @@
                 <a href="index.html" id="logo"><img src="images/logo.png" alt="LOGO"></a>
             </div>
         </div>
-        <div id="adbox">
-            <h1>Cycle  for this session</h1>
-            <ul>
-                <li>
-                    <a href=""><img src="images/cycle_3.jpg" alt="Img"></a>
-                    <a href="cartprocess.jsp" class="button">Add to cart</a>
-                </li>
-                <li>
-                    <a href=""><img src="images/fiveproduct1.jpg" alt="Img"></a>
-                   <a href="cartprocess.jsp" class="button">Add to cart</a>
-                </li>
-                <li>
-                    <a href=""><img src="images/cycle_4.jpg" alt="Img"></a>
-                    <a href="cartprocess.jsp" class="button">Add to cart</a>
-                </li>
-            </ul>
-        </div>
+       
         <%
              PrintWriter o = response.getWriter();
               Connection conn = database.LoginDatabase.getConnection();
@@ -91,7 +75,7 @@
     String name = null;
     int price = 0;
     String desc = null;
-    String query = "select * from cycle where id >=1";  
+    String query = "select * from cycle where id > = 1";  
    ResultSet rs =  st.executeQuery(query);
  
  while(rs.next())
@@ -104,10 +88,11 @@
       %>
       
       
-      o.println(id);
-      o.println(name);
-      o.println(price);
-      o.println(desc);
+    <tr> <% o.println(name);%></tr>
+    <tr> <% o.println(price);%></tr>
+    <tr> <% o.println(desc);%></tr>
+    <tr><input type="submit" value="Add to cart" class="button"/><tr>
+      
       <%
     }rs.close();
              }catch(Exception e){
