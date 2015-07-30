@@ -68,7 +68,7 @@
                         response.sendRedirect("login.jsp");
                     } else {
                         Statement st = conn.createStatement();
-                        String query = "select userid,name,description,price from cart where userid = '"+user_id+"'";
+                        String query = "select * from cart where userid = '"+user_id+"'";
                         ResultSet rs = st.executeQuery(query);
                    
                     if(!rs.next()){
@@ -77,9 +77,11 @@
                           %> 
                           <table>
                               <tr><%= rs.getString(1) %></tr>
-                               <tr><%= rs.getString(3) %></tr>
-                                 <tr><%= rs.getString(4) %></tr>
-                                  <tr><%= rs.getString(5) %></tr>
+                               <tr><%= rs.getString(2) %></tr>
+                                 <tr><%= rs.getString(3) %></tr>
+                                  <tr><%= rs.getString(4) %></tr>
+                                   <tr><%= rs.getString(5) %></tr>
+                                    <tr><%= rs.getString(6) %></tr>
                           </table>>
                       <% } 
                     }
