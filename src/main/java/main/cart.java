@@ -77,7 +77,7 @@ public class cart extends HttpServlet {
             else
             {
                  PreparedStatement ps=conn.prepareStatement
-                  ("insert into cart values(?,?,?,?,?)");
+                  ("insert into cart values(?,?,?,?,?,?)");
         ps.setString(1, user_id);
         ps.setString(2, imageid);
         ps.setString(3, cname);
