@@ -88,7 +88,7 @@
           <tr><%= id %><input type="hidden" value="<%= id %>" name="imgid"></tr>
           <tr> <img src="<%= name%>"><input type="hidden" value="<%= name%>" name="path"></tr>
           <tr> <%= price %><input type="hidden" value="<%= price %>" name="cost"></tr>
-          <tr> <%= desc %><input type="hidden" value="<%= desc %>" value="imgdesc"></tr>
+          <tr> <%= desc %><input type="hidden" value="<%= desc %>" name="imgdesc"></tr>
     <tr><input type="submit" value="Add to cart" class="button"/><tr>
           </table>
      </form>

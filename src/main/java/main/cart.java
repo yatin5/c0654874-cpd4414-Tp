@@ -63,11 +63,7 @@ public class cart extends HttpServlet {
           String cname = request.getParameter("path");
           String price = request.getParameter("cost");
           String description = request.getParameter("imgdesc");
-          out.println(user_id);
-          out.println(imageid);
-          out.println(cname);
-          out.println(price);
-          out.println(description);
+         
             
             
             
@@ -82,8 +78,8 @@ public class cart extends HttpServlet {
             {
                  PreparedStatement ps=conn.prepareStatement
                   ("insert into cart values(?,?,?,?,?)");
-                
-                  ps.setString(2, imageid);
+        ps.setString(1, user_id);
+        ps.setString(2, imageid);
         ps.setString(3, cname);
         ps.setString(4, price);
         ps.setString(5, description);
