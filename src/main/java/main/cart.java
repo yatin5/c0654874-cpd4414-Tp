@@ -77,7 +77,7 @@ public class cart extends HttpServlet {
             else
             {
                  PreparedStatement ps=conn.prepareStatement
-                  ("insert into cart values(userid,id,name,description,price)");
+                  ("insert into cart values('userid','id','name','description','price')");
         
         ps.setString(1, user_id);
         ps.setString(2, imageid);
@@ -90,7 +90,8 @@ public class cart extends HttpServlet {
           if(i>0)
           {
             out.println("Your cycle added successfully");
-          }
+          }else
+                  { out.println("no data inserted");}
             }
           
         } catch(Exception e) {
