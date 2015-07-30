@@ -59,10 +59,10 @@ public class cart extends HttpServlet {
         try {
           Connection conn = database.LoginDatabase.getConnection();
           
-          String imageid = request.getParameter("id");
-          String cname = request.getParameter("name");
-          String price = request.getParameter("price");
-          String description = request.getParameter("desc");
+          String imageid = request.getParameter("imgid");
+          String cname = request.getParameter("path");
+          String price = request.getParameter("cost");
+          String description = request.getParameter("imgdesc");
           out.println(user_id);
           out.println(imageid);
           out.println(cname);
