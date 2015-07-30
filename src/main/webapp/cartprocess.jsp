@@ -87,10 +87,10 @@
       
       %>
       <table><form action="" methdo="get">
-      <tr><%= o.println(id) %></tr>
-    <tr> <%= o.println(name)%></tr>
-    <tr> <%= o.println(price) %></tr>
-    <tr> <%= o.println(desc)%></tr>
+      <tr><%= id %></tr>
+    <tr> <%= name%></tr>
+    <tr> <%= price %></tr>
+    <tr> <%= desc %></tr>
     <tr><input type="submit" value="Add to cart" class="button"/><tr>
      </form>
       </table>
