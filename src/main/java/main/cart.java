@@ -87,7 +87,7 @@ public class cart extends HttpServlet {
         
         int i=ps.executeUpdate();
         
-          if(i>0)
+          if(i>1)
           {
             out.println("Your cycle added successfully");
           }else
