@@ -61,12 +61,7 @@
         <%
              PrintWriter o = response.getWriter();
               Connection conn = database.LoginDatabase.getConnection();
-    if(conn != null){
-        o.println("success");
-    }
-    else{
-        o.println("failed");
-    }
+    
              try{
 
    Statement st = conn.createStatement();
@@ -86,14 +81,18 @@
       desc  = rs.getString("description");
       
       %>
-      <table><form action="" methdo="get">
+      <div id="adbox">
+           <form action="cart" methdo="post">
+      <table>
+         
       <tr><%= id %></tr>
       <tr> <img src="<%= name%>"></tr>
     <tr> <%= price %></tr>
     <tr> <%= desc %></tr>
     <tr><input type="submit" value="Add to cart" class="button"/><tr>
+          </table>
      </form>
-      </table>
+      </div>
       <%
     }rs.close();
              }catch(Exception e){
