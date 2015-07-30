@@ -9,11 +9,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import sun.security.pkcs11.wrapper.Functions;
 
 /**
  *
@@ -32,18 +34,47 @@ public class cart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+       // response.setContentType("text/html;charset=UTF-8");
+        
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       // processRequest(request, response);
+        HttpSession session = request.getSession();
+
+    
+        String user_id = (String) session.getAttribute("User");
         PrintWriter out = response.getWriter();
         try {
           Connection conn = database.LoginDatabase.getConnection();
-          String uid = request.getParameter("userid");
+          
           String imageid = request.getParameter("id");
           String cname = request.getParameter("name");
           String price = request.getParameter("price");
           String description = request.getParameter("desc");
+          out.println(user_id);
+          out.println(imageid);
+          out.println(cname);
+          out.println(price);
+          out.println(description);
+            
+            
+            
           
-            HttpSession session = request.getSession();
-            if(session == null){
+           
+                   
+            if(user_id == null){
                 out.println("Please login first to add to cart!");
                 response.sendRedirect("login.jsp");
             }
@@ -51,7 +82,7 @@ public class cart extends HttpServlet {
             {
                  PreparedStatement ps=conn.prepareStatement
                   ("insert into cart values(?,?,?,?,?)");
-                 ps.setString(1,uid);
+                
                   ps.setString(2, imageid);
         ps.setString(3, cname);
         ps.setString(4, price);
@@ -69,21 +100,9 @@ public class cart extends HttpServlet {
             out.println(e.getMessage());
             out.close();
         }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    
+    
+    
     }
 
     /**
