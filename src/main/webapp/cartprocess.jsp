@@ -86,13 +86,13 @@
       desc  = rs.getString("description");
       
       %>
-      
+      <table>
       <tr><% o.println(id); %></tr>
     <tr> <% o.println(name);%></tr>
     <tr> <% o.println(price);%></tr>
     <tr> <% o.println(desc);%></tr>
     <tr><input type="submit" value="Add to cart" class="button"/><tr>
-      
+      </table>
       <%
     }rs.close();
              }catch(Exception e){
