@@ -70,7 +70,7 @@
                         response.sendRedirect("login.jsp");
                     } else {
                         Statement st = conn.createStatement();
-                        String query = "select * from cart where userid = user_id";
+                        String query = "select * from cart where userid = '"+user_id+"'";
                         ResultSet rs = st.executeQuery(query);
                     }
                 } catch (Exception e) {
@@ -89,12 +89,10 @@
                             <a href="read.html" class="more">Read More</a>
                         </li>
 
-                        <li>
-                           
+                        <li>    
                             <p>
                                 If you're having problems using this Website,then don't hesitate to ask for help on the <a href="http://www.google.com/forums/">Forum</a>.<br><br>
                             </p>
-                            <a href="" class="more">Request</a>
                         </li>
                     </ul>
                 </div>
@@ -103,8 +101,7 @@
                 <div class="background">
                     <div class="body">
                         <div class="subscribe">
-                            <h3>Get Weekly Newsletter</h3>
-                            <form action="index.html" method="post">
+                                <form action="index.html" method="post">
                                 <input type="text" value="" class="txtfield">
                                 <input type="submit" value="" class="button">
                             </form>
