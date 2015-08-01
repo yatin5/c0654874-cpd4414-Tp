@@ -65,7 +65,7 @@ public class Login extends HttpServlet {
                 session.setAttribute("User", id);
                 //session.setAttribute("Password", id2);
 //                
-                RequestDispatcher rd = request.getRequestDispatcher("cartprocess.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
 
                 rd.forward(request, response);
             }
