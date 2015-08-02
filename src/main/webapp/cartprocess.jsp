@@ -73,10 +73,7 @@
     String query = "select * from cycle";  
    ResultSet rs =  st.executeQuery(query);
  %>
- <div id="adbox">
-          <div id="contents">
-			<h1>CYCLES</h1>
-			<ul id="shirts">
+
  <%
  while(rs.next())
  {
@@ -86,7 +83,10 @@
       desc  = rs.getString("description");
       
       %>
-      
+       <div id="adbox">
+          <div id="contents">
+			<h1>CYCLES</h1>
+			<ul id="shirts">
            <form action="cart" methdo="get">
       <table>
          
