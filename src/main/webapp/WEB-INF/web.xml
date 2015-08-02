@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>cart</servlet-name>
-        <servlet-class>main.cart</servlet-class>
+        <servlet-class>main.Contactus</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

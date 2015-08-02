@@ -112,12 +112,7 @@
             <div id="footer">
                 <div class="background">
                     <div class="body">
-                        <div class="subscribe">
-                                <form action="index.html" method="post">
-                                <input type="text" value="" class="txtfield">
-                                <input type="submit" value="" class="button">
-                            </form>
-                        </div>
+                      
 
                         <div class="connect">
                             <h3>Follow Us:</h3>

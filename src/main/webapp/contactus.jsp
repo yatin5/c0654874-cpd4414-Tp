@@ -1,9 +1,15 @@
+<%-- 
+    Document   : contactus
+    Created on : Aug 2, 2015, 3:09:05 PM
+    Author     : HP
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Contact - Moonstrosity Custom Shirts Website Template</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <title>Contact - Moonstrosity Custom Shirts Website Template</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
@@ -11,10 +17,10 @@
             <div>
                 <div id="navigation">
                     <div class="infos">
-                        <a href="index.html">Cart</a> <a href="index.html">0 items</a>
+                        <a href="cartprocess.jsp">Cart</a> <a href="checkout.jsp">CheckOut</a>
                     </div>
                     <div>
-                        <a href="login.html">Login</a> <a href="index.html">Register</a>
+                        <a href="login.jsp">Login</a> <a href="index.html">Register</a>
                     </div>
                     <ul id="primary">
                         <li>
@@ -24,7 +30,7 @@
                             <a href="about.html"><span>About</span></a>
                         </li>
                         <li>
-                            <a href="men.html"><span>Men</span></a>
+                            <a href="men.html"><span>Cycles</span></a>
                         </li>
                     </ul>
                     <ul id="secondary">

@@ -25,7 +25,7 @@ import sun.security.pkcs11.wrapper.Functions;
  *
  * @author HP
  */
-public class cart extends HttpServlet {
+public class Contactus extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -120,7 +120,7 @@ public class cart extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(cart.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Contactus.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
