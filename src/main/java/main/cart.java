@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,8 +37,18 @@ public class cart extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
        // response.setContentType("text/html;charset=UTF-8");
+         PrintWriter out = response.getWriter();
+        Connection conn = database.LoginDatabase.getConnection();
+        
+        try{
+            
+            
+        }catch(Exception e){
+            out.println(e.getMessage());
+            out.close();
+        }
 
     }
 
@@ -104,7 +117,11 @@ public class cart extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(cart.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
