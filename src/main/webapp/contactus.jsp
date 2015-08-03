@@ -30,13 +30,11 @@
                             <a href="about.html"><span>About</span></a>
                         </li>
                         <li>
-                            <a href="check.html"><span>Cycles</span></a>
+                            <a href="cartprocess.jsp"><span>Cycles</span></a>
                         </li>
                     </ul>
                     <ul id="secondary">
-                        <li>
-                            <a href="women.html"><span>Women</span></a>
-                        </li>
+                       
                         <li>
                             <a href="blog.html"><span>Blog</span></a>
                         </li>
