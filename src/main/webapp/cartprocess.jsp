@@ -57,6 +57,9 @@
                 <a href="index.html" id="logo"><img src="images/logo.png" alt="LOGO"></a>
             </div>
         </div>
+        <div>
+            <h1>CYCLES</h1>
+            </div>
        
         <%
              PrintWriter o = response.getWriter();
@@ -85,7 +88,7 @@
       %>
        <div id="adbox">
           <div id="contents">
-			<h1>CYCLES</h1>
+			
 			<ul id="shirts">
            <form action="cart" methdo="post">
       <table>
