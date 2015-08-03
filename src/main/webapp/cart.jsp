@@ -71,9 +71,9 @@
                         String query = "select * from cart where userid = '"+user_id+"'";
                         ResultSet rs = st.executeQuery(query);
                    
-                    if(!rs.next()){
-                            out.println("No Item in cart");
-                           }else{
+                    if(!rs.next()){%>
+                    <table>    out.println("No Item in cart"); </table>
+                           <%}else{
                           %> 
                           <table>
                               <tr><input type="hidden" value="<%= rs.getString(1) %>"></tr>

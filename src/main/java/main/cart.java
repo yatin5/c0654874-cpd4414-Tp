@@ -8,10 +8,7 @@ package main;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author HP
  */
-public class checkout extends HttpServlet {
+public class cart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,48 +29,49 @@ public class checkout extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
-        Connection conn = database.LoginDatabase.getConnection();
-        //response.setContentType("text/html;charset=UTF-8");
+            throws ServletException, IOException {
+      //  response.setContentType("text/html;charset=UTF-8");
+         HttpSession session = request.getSession();
+
+        String user_id = (String) session.getAttribute("User");
         PrintWriter out = response.getWriter();
         try {
-            String Name = request.getParameter("name");
-            String email = request.getParameter("mail");
-            String Phone = request.getParameter("phn");
-            String Card = request.getParameter("cno");
-            String Cvv = request.getParameter("cvv");
-            String Address = request.getParameter("add");
-            
-            
-             HttpSession session = request.getSession();
-             String user_id = (String) session.getAttribute("User");
-             if(user_id == null){
-                 response.sendRedirect("login.jsp");
-             }else
-             {
-        
-             PreparedStatement ps = conn.prepareStatement("insert into checkout values(?,?,?,?,?,?)");
+            Connection conn = database.LoginDatabase.getConnection();
 
-            ps.setString(1, Name);
-            ps.setString(2, email);
-            ps.setString(3, Phone);
-            ps.setString(4, Card);
-            ps.setString(5, Cvv);
-            ps.setString(6, Address);
-            
-           
-            int i = ps.executeUpdate();
+            String imageid_new = request.getParameter("imgid");
+            String cname = request.getParameter("path");
+            String price_new = request.getParameter("cost");
+            String description = request.getParameter("imgdesc");
 
-            if (i > 0) {
-                response.sendRedirect("check.html");
+            int price = Integer.parseInt(price_new);
+            int imageid = Integer.parseInt(imageid_new);
+
+            if (user_id == null) {
+                out.println("Please login first to add to cart!");
+                response.sendRedirect("login.jsp");
+            } else {
+                Statement ps = conn.createStatement();
+                String query = "insert into cart(userid,id,name,description,price) values('" + user_id + "','" + imageid + "','" + cname + "','" + description + "','" + price + "')";
+
+                int i = ps.executeUpdate(query);
+
+                if (i == 1) {
+
+                    out.println("Your cycle added successfully");
+                    response.sendRedirect("index.html");
+                } else {
+                    out.println("It seems you might hot have logged in!!");
+                    response.sendRedirect("login.jsp");
+                }
             }
-             }
-        } finally {
+
+        } catch (Exception e) {
+            out.println(e.getMessage());
             out.close();
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -88,11 +86,7 @@ public class checkout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(checkout.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -106,11 +100,7 @@ public class checkout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(checkout.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

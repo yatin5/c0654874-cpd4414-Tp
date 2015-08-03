@@ -87,7 +87,7 @@
           <div id="contents">
 			<h1>CYCLES</h1>
 			<ul id="shirts">
-           <form action="cart.jsp" methdo="get">
+           <form action="cart" methdo="get">
       <table>
          
           <tr><%= id %><input type="hidden" value="<%= id %>" name="imgid"></tr>
