@@ -87,7 +87,7 @@
           <div id="contents">
 			<h1>CYCLES</h1>
 			<ul id="shirts">
-           <form action="cart" methdo="get">
+           <form action="cart" methdo="post">
       <table>
          
           <tr><%= id %><input type="hidden" value="<%= id %>" name="imgid"></tr>
