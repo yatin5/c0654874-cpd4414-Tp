@@ -39,7 +39,7 @@
                             <a href="about.html"><span>About</span></a>
                         </li>
                         <li>
-                            <a href="men.html"><span>Men</span></a>
+                            <a href="check.html"><span>Men</span></a>
                         </li>
                     </ul>
                     <ul id="secondary">
@@ -50,7 +50,7 @@
                             <a href="blog.html"><span>Blog</span></a>
                         </li>
                         <li>
-                            <a href="contact.html"><span>Contact</span></a>
+                            <a href="Contactus.jsp"><span>Contact</span></a>
                         </li>
                     </ul>
                 </div>
@@ -94,7 +94,7 @@
           <tr> <img src="<%= name%>"><input type="hidden" value="<%= name%>" name="path"></tr>
           <tr> <%= price %><input type="hidden" value="<%= price %>" name="cost"></tr>
           <tr> <%= desc %><input type="hidden" value="<%= desc %>" name="imgdesc"></tr>
-    <tr><input type="submit" value="Add to cart" class="button"/><tr>
+    <tr><input type="submit" value="Add to cart" class="button"/></tr>
           </table>
      </form>
     </ul>

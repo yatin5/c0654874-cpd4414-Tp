@@ -10,22 +10,18 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import sun.security.pkcs11.wrapper.Functions;
 
 /**
  *
  * @author HP
  */
-public class Contactus extends HttpServlet {
+public class checkout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,37 +31,39 @@ public class Contactus extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-       // response.setContentType("text/html;charset=UTF-8");
-         PrintWriter out = response.getWriter();
         Connection conn = database.LoginDatabase.getConnection();
-        
-        try{
+        //response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try {
             String Name = request.getParameter("name");
-            String Address = request.getParameter("add");
+            String email = request.getParameter("mail");
             String Phone = request.getParameter("phn");
-            String Message = request.getParameter("text");
+            String Card = request.getParameter("cno");
+            String Cvv = request.getParameter("cvv");
+            String Address = request.getParameter("add");
             
-             PreparedStatement ps = conn.prepareStatement("insert into contactus values(?,?,?,?)");
+             PreparedStatement ps = conn.prepareStatement("insert into checkout values(?,?,?,?,?,?)");
 
             ps.setString(1, Name);
-            ps.setString(2, Address);
+            ps.setString(2, email);
             ps.setString(3, Phone);
-            ps.setString(4, Message);
+            ps.setString(4, Card);
+            ps.setString(5, Cvv);
+            ps.setString(6, Address);
+            
            
             int i = ps.executeUpdate();
 
             if (i > 0) {
-                response.sendRedirect("index.html");
+                response.sendRedirect("check.html");
             }
-        
-        }catch(Exception e){
-            out.println(e.getMessage());
+        } finally {
             out.close();
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -80,46 +78,11 @@ public class Contactus extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // processRequest(request, response);
-        HttpSession session = request.getSession();
-
-        String user_id = (String) session.getAttribute("User");
-        PrintWriter out = response.getWriter();
         try {
-            Connection conn = database.LoginDatabase.getConnection();
-
-            String imageid_new = request.getParameter("imgid");
-            String cname = request.getParameter("path");
-            String price_new = request.getParameter("cost");
-            String description = request.getParameter("imgdesc");
-
-            int price = Integer.parseInt(price_new);
-            int imageid = Integer.parseInt(imageid_new);
-
-            if (user_id == null) {
-                out.println("Please login first to add to cart!");
-                response.sendRedirect("login.jsp");
-            } else {
-                Statement ps = conn.createStatement();
-                String query = "insert into cart(userid,id,name,description,price) values('" + user_id + "','" + imageid + "','" + cname + "','" + description + "','" + price + "')";
-
-                int i = ps.executeUpdate(query);
-
-                if (i == 1) {
-
-                    out.println("Your cycle added successfully");
-                    response.sendRedirect("index.html");
-                } else {
-                    out.println("It seems you might hot have logged in!!");
-                    response.sendRedirect("login.jsp");
-                }
-            }
-
-        } catch (Exception e) {
-            out.println(e.getMessage());
-            out.close();
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(checkout.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     /**
@@ -136,7 +99,7 @@ public class Contactus extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Contactus.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(checkout.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

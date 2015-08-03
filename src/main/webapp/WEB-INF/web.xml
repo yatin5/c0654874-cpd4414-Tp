@@ -9,8 +9,12 @@
         <servlet-class>main.register</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>cart</servlet-name>
+        <servlet-name>Contactus</servlet-name>
         <servlet-class>main.Contactus</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkout</servlet-name>
+        <servlet-class>main.checkout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -21,7 +25,11 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>cart</servlet-name>
-        <url-pattern>/cart</url-pattern>
+        <servlet-name>Contactus</servlet-name>
+        <url-pattern>/Contactus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkout</servlet-name>
+        <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
 </web-app>

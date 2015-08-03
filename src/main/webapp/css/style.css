@@ -317,6 +317,7 @@ ul#blogs li a:hover, #sidebar ul.contacts li a:hover {
 	padding: 1px 4px;
 }
 #contacts input.button {
+        background: url(../images/buttons.png);
 	float: right;
 	background-position: -162px -212px;
 	cursor: pointer;

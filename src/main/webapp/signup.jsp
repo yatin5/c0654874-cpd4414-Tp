@@ -35,7 +35,7 @@
 						<a href="about.html"><span>About</span></a>
 					</li>
 					<li>
-						<a href="men.html"><span>Men</span></a>
+						<a href="check.html"><span>Men</span></a>
 					</li>
 				</ul>
 				<ul id="secondary">
@@ -88,14 +88,13 @@
                         <td>Password</td>
                         <td><input type="password" name="pass" value="" /></td>
                     </tr>
-                    <tr>
-                        <input type="submit" value="Submit" />
-                        <input type="reset" value="Reset" />
-                    </tr>
+
                     <tr>
                         <h2> If you are Already registered!! <a href="index.html">Go to home page!</a></h2>
                     </tr>
                 </tbody>
+                <input type="submit" value="Submit" class="button" />
+                <input type="reset" value="Reset" class="button" />
             </table>
             </center>
         </form>

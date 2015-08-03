@@ -29,7 +29,7 @@
                             <a href="about.html"><span>About</span></a>
                         </li>
                         <li>
-                            <a href="men.html"><span>Men</span></a>
+                            <a href="check.html"><span>Men</span></a>
                         </li>
                     </ul>
                     <ul id="secondary">

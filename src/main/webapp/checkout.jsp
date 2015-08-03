@@ -1,6 +1,6 @@
 <%-- 
-    Document   : contactus
-    Created on : Aug 2, 2015, 3:09:05 PM
+    Document   : checkout
+    Created on : Aug 3, 2015, 12:17:13 AM
     Author     : HP
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <title>The Cycle Store</title>
+      <title>The Cycle Store</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
@@ -34,9 +34,7 @@
                         </li>
                     </ul>
                     <ul id="secondary">
-                        <li>
-                            <a href="women.html"><span>Women</span></a>
-                        </li>
+                       
                         <li>
                             <a href="blog.html"><span>Blog</span></a>
                         </li>
@@ -50,7 +48,7 @@
         </div>
         <div id="body">
             <div id="contents">
-                <h1>Contact</h1>
+                <h1>Order Placement</h1>
                 <div id="sidebar">
                     <h4>Contact Information</h4>
                     <ul class="contacts">
@@ -75,8 +73,8 @@
                     </ul>
                 </div>
                 <div id="main">
-                    <h4 class="uppercase">Get in touch with us</h4>
-                    <form action="Contactus" method="post" id="contacts">
+                    <h4 class="uppercase">Payment Information</h4>
+                    <form action="checkout" method="post" id="contacts">
                         <table>
                             <tbody>
                                 <tr>
@@ -84,14 +82,20 @@
                                     <td><input type="text" value="" name="name"></td>
                                 </tr> <tr>
                                     <td><label>Email Address:</label></td>
-                                    <td><input type="text" value="" name="add"></td>
+                                    <td><input type="text" value="" name="mail"></td>
                                 </tr> <tr>
                                     <td><label>Phone:</label></td>
                                     <td><input type="text" value="" name="phn"></td>
                                 </tr> <tr>
-                                    <td><label>Message:</label></td>
-                                    <td><textarea name="text"></textarea></td>
+                                    <td><label>Card Number:</label></td>
+                                    <td><input type="text" value="" name="cno"></td>
+                                </tr><tr>
+                                    <td><label>CVV number:</label></td>
+                                    <td><input type="text" value="" name="cvv"></td>
                                 </tr> <tr>
+                                    <td><label>Shipping Address:</label></td>
+                                    <td><textarea name="add"></textarea></td>
+                                </tr><tr>
                                     <td colspan="2"><input type="submit" value="Send" class="button"></td>
                                 </tr>
                             </tbody>
