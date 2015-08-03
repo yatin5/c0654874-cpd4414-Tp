@@ -77,11 +77,11 @@
                           %> 
                           <table>
                               <tr><input type="hidden" value="<%= rs.getString(1) %>"></tr>
-                               <tr><%= rs.getString(2) %></tr>
+                              <table>  <tr><%= rs.getString(2) %></tr> </table>>
                                <tr><input type="hidden" value="<%= rs.getString(3) %>" ></tr>
-                                  <tr><img src="<%= rs.getString(4) %>" ></tr>
-                                   <tr><%= rs.getString(5) %></tr>
-                                    <tr>$<%= rs.getString(6) %></tr>
+                               <table> <tr><img src="<%= rs.getString(4) %>" ></tr></table>
+                               <table>  <tr><%= rs.getString(5) %></tr> </table>>
+                               <table> <tr>$<%= rs.getString(6) %></tr></table>
                           </table>>
                       <% } 
                     }
