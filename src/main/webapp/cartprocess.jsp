@@ -57,8 +57,10 @@
                 <a href="index.html" id="logo"><img src="images/logo.png" alt="LOGO"></a>
             </div>
         </div>
-        <div>
+        <div id="adbox">
+          <div id="contents">
             <h1>CYCLES</h1>
+          </div>
             </div>
        
         <%
