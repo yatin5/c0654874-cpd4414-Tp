@@ -48,7 +48,7 @@ public class checkout extends HttpServlet {
             String Card = request.getParameter("cno");
             String Cvv = request.getParameter("cvv");
             String Address = request.getParameter("add");
-             Integer p = Integer.parseInt("phone");
+             Integer p = Integer.parseInt("Phone");
              Integer c = Integer.parseInt("Card");
              Integer a = Integer.parseInt("Cvv");
              HttpSession session = request.getSession();
