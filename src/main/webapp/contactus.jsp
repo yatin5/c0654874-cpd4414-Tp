@@ -20,7 +20,7 @@
                         <a href="cartprocess.jsp">Cart</a> <a href="checkout.jsp">CheckOut</a>
                     </div>
                     <div>
-                        <a href="login.jsp">Login</a> <a href="index.html">Register</a>
+                        <a href="login.jsp">Login</a> <a href="signup.jsp">Register</a>
                     </div>
                     <ul id="primary">
                         <li>
@@ -29,14 +29,12 @@
                         <li>
                             <a href="about.html"><span>About</span></a>
                         </li>
-                        <li>
-                            <a href="cartprocess.jsp"><span>Cycles</span></a>
-                        </li>
+                       
                     </ul>
                     <ul id="secondary">
                        
                         <li>
-                            <a href="blog.html"><span>Blog</span></a>
+                            <a href="cartprocess.jsp"><span>Cycles</span></a>
                         </li>
                         <li class="selected">
                             <a href="contactus.jsp"><span>Contact</span></a>
@@ -79,16 +77,16 @@
                             <tbody>
                                 <tr>
                                     <td><label>Name:</label></td>
-                                    <td><input type="text" value="" name="name"></td>
+                                    <td><input type="text" value="" name="name" required=""></td>
                                 </tr> <tr>
                                     <td><label>Email Address:</label></td>
-                                    <td><input type="text" value="" name="add"></td>
+                                    <td><input type="text" value="" name="add" placeholder="xyz@example.ca/com" required=""></td>
                                 </tr> <tr>
                                     <td><label>Phone:</label></td>
-                                    <td><input type="text" value="" name="phn"></td>
+                                    <td><input type="text" value="" name="phn" placeholder="(123)455-1234" required=""></td>
                                 </tr> <tr>
                                     <td><label>Message:</label></td>
-                                    <td><textarea name="text"></textarea></td>
+                                    <td><textarea name="text" required=""></textarea></td>
                                 </tr> <tr>
                                     <td colspan="2"><input type="submit" value="Send" class="button"></td>
                                 </tr>
@@ -98,16 +96,17 @@
                 </div>
             </div>
         </div>
-        <div id="footer">
-            <div class="background">
-                <div class="body">
-                    <div class="connect">
-                        <h3>Follow Us:</h3>
-                        <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
-                    </div>
-                </div>
-            </div>
-            <span id="footnote"> <a href="index.html">Moonstrosity Custom Shirts</a> &copy; 2012 | All Rights Reserved.</span>
-        </div>
-    </body>
+      <div id="footer">
+		<div class="background">
+			<div class="body">
+				
+				<div class="connect">
+					<h3>Follow Us:</h3>
+					<a href="https://www.facebook.com/yatin5" target="_blank" class="facebook"></a> <a href="https://mobile.twitter.com/account" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+				</div>
+			</div>
+		</div>
+		<span id="footnote"> <a href="index.html">The Cycle Store</a> &copy; 2015 | All Rights Reserved.</span>
+	</div>
+</body>
 </html>

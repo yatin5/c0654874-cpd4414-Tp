@@ -106,17 +106,16 @@
                 </div>
             </div>
             <div id="footer">
-                <div class="background">
-                    <div class="body">
-                      
-
-                        <div class="connect">
-                            <h3>Follow Us:</h3>
-                            <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
-                        </div>
-                    </div>
-                </div>
-                <span id="footnote"> <a href="index.html">The cycle Store</a> &copy; 2015 | All Rights Reserved.</span>
-            </div>
-    </body>
+		<div class="background">
+			<div class="body">
+				
+				<div class="connect">
+					<h3>Follow Us:</h3>
+					<a href="https://www.facebook.com/yatin5" target="_blank" class="facebook"></a> <a href="https://mobile.twitter.com/account" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+				</div>
+			</div>
+		</div>
+		<span id="footnote"> <a href="index.html">The Cycle Store</a> &copy; 2015 | All Rights Reserved.</span>
+	</div>
+</body>
 </html>
