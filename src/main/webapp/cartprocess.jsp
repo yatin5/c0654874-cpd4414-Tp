@@ -84,11 +84,11 @@
        <div id="adbox">
           <div id="contents">
 			
-			<ul id="shirts">
+			<ul id="main">
            <form action="cart" methdo="post">
       <table>
          
-          <tr><%= id %><input type="hidden" value="<%= id %>" name="imgid"></tr>
+          <tr><input type="hidden" value="<%= id %>" name="imgid"></tr>
           <tr> <img src="<%= name%>"><input type="hidden" value="<%= name%>" name="path"></tr>
           <tr> <p><%= price %><input type="hidden" value="<%= price %>" name="cost"> </p></tr>
           <tr> <p><%= desc %><input type="hidden" value="<%= desc %>" name="imgdesc"></p></tr>
