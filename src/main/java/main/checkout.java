@@ -71,7 +71,8 @@ public class checkout extends HttpServlet {
                 response.sendRedirect("check.html");
             }
              }
-        } finally {
+        } catch(Exception e) {
+            out.println(e.getMessage());
             out.close();
         }
     }
