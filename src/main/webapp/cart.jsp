@@ -21,7 +21,7 @@
             <div>
                 <div id="navigation">
                     <div class="infos">
-                        <a href="index.html">Cart</a> <a href="index.html">0 items</a>
+                        <a href="index.html">Cart</a> <a href="checkout.jsp">CheckOut</a>
                     </div>
                     <div>
                         <a href="login.jsp">Login</a> <a href="signup.jsp">Register</a>
@@ -43,7 +43,7 @@
                         </li>
                         
                         <li>
-                            <a href="contact.html"><span>Contact</span></a>
+                            <a href="contactus.jsp"><span>Contact</span></a>
                         </li>
                     </ul>
                 </div>
@@ -68,16 +68,16 @@
                         ResultSet rs = st.executeQuery(query);
                    
                     if(!rs.next()){%>
-                    <table>    out.println("No Item in cart"); </table>
+                    <table>  <h1>  out.println("No Item in cart");<h1> </table>
                            <%}else{
                           %> 
                           <table>
                               <tr><input type="hidden" value="<%= rs.getString(1) %>"></tr>
-                              <table>  <tr><%= rs.getString(2) %></tr> </table>>
-                               <tr><input type="hidden" value="<%= rs.getString(3) %>" ></tr>
-                               <table> <tr><img src="<%= rs.getString(4) %>" ></tr></table>
-                               <table>  <tr><%= rs.getString(5) %></tr> </table>>
-                               <table> <tr>$<%= rs.getString(6) %></tr></table>
+                              <table> <p> <tr><%= rs.getString(2) %></tr></p> </table>>
+                              <tr><input type="hidden" value="<%= rs.getString(3) %>" ></tr>
+                              <table> <tr><p><img src="<%= rs.getString(4) %>" ></p></tr></table>
+                              <table> <tr><p> Description: <%= rs.getString(5) %></tr> </p></table>>
+                              <table> <tr><p>Price: $<%= rs.getString(6) %></p></tr></table>
                           </table>>
                       <% } 
                     }

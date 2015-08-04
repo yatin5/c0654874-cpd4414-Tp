@@ -20,7 +20,8 @@
                         <a href="cartprocess.jsp">Cart</a> <a href="checkout.jsp">CheckOut</a>
                     </div>
                     <div>
-                        <a href="login.jsp">Login</a> <a href="index.html">Register</a>
+                        <a href="login.jsp">Login</a> <a href="signup.jsp">Register</a>
+                        <a href="logout.jsp">Logout</a>
                     </div>
                     <ul id="primary">
                         <li>
@@ -76,22 +77,22 @@
                             <tbody>
                                 <tr>
                                     <td><label>Name:</label></td>
-                                    <td><input type="text" value="" name="name"></td>
+                                    <td><input type="text" value="" name="name" required=""></td>
                                 </tr> <tr>
                                     <td><label>Email Address:</label></td>
-                                    <td><input type="text" value="" name="mail"></td>
+                                    <td><input type="text" value="" name="mail" placeholder="xyz@example.ca/com" required=""></td>
                                 </tr> <tr>
                                     <td><label>Phone:</label></td>
-                                    <td><input type="text" value="" name="phn"></td>
+                                    <td><input type="text" value="" name="phn" placeholder="(123)266-1234" required=""></td>
                                 </tr> <tr>
                                     <td><label>Card Number:</label></td>
-                                    <td><input type="text" value="" name="cno"></td>
+                                    <td><input type="text" value="" name="cno" placeholder="Please enter 16-digit" required=""></td>
                                 </tr><tr>
                                     <td><label>CVV number:</label></td>
-                                    <td><input type="text" value="" name="cvv"></td>
+                                    <td><input type="text" value="" name="cvv" placeholder="3-digit" required=""></td>
                                 </tr> <tr>
                                     <td><label>Shipping Address:</label></td>
-                                    <td><textarea name="add"></textarea></td>
+                                    <td><textarea name="add" required=""></textarea></td>
                                 </tr><tr>
                                     <td colspan="2"><input type="submit" value="Send" class="button"></td>
                                 </tr>
