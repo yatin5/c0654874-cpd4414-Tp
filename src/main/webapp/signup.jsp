@@ -23,6 +23,7 @@
 					<a href="login.jsp">Login</a> 
                                         <a href="index.html">Register</a>
                                         
+                                        
                                         <%
                                             %>
                                           <a href="logout.jsp">Logout</a> 

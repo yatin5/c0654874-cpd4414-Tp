@@ -29,14 +29,11 @@
                         <li>
                             <a href="about.html"><span>About</span></a>
                         </li>
-                        <li>
-                            <a href="check.html"><span>Cycles</span></a>
-                        </li>
                     </ul>
                     <ul id="secondary">
                        
-                        <li>
-                            <a href="blog.html"><span>Blog</span></a>
+                       <li>
+                            <a href="cartprocess.jsp"><span>Cycles</span></a>
                         </li>
                         <li class="selected">
                             <a href="contactus.jsp"><span>Contact</span></a>

@@ -25,10 +25,7 @@
                     </div>
                     <div>
                         <a href="login.jsp">Login</a> <a href="signup.jsp">Register</a>
-                       
-                        
-                        
-                        
+
                         <a href="logout.jsp">Logout</a> 
                     </div>
                     <ul id="primary">
@@ -38,17 +35,13 @@
                         <li>
                             <a href="about.html"><span>About</span></a>
                         </li>
-                        <li>
-                            <a href="check.html"><span>Men</span></a>
-                        </li>
+                        
                     </ul>
                     <ul id="secondary">
                         <li>
-                            <a href="women.html"><span>Women</span></a>
+                            <a href="cartprocess.jsp"><span>Cycle</span></a>
                         </li>
-                        <li>
-                            <a href="blog.html"><span>Blog</span></a>
-                        </li>
+                        
                         <li>
                             <a href="Contactus.jsp"><span>Contact</span></a>
                         </li>
