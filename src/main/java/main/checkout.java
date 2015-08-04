@@ -5,6 +5,7 @@
  */
 package main;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -12,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,8 +48,9 @@ public class checkout extends HttpServlet {
             String Card = request.getParameter("cno");
             String Cvv = request.getParameter("cvv");
             String Address = request.getParameter("add");
-            
-            
+             Integer p = Integer.parseInt("phone");
+             Integer c = Integer.parseInt("Card");
+             Integer a = Integer.parseInt("Cvv");
              HttpSession session = request.getSession();
              String user_id = (String) session.getAttribute("User");
              if(user_id == null){
@@ -59,9 +62,9 @@ public class checkout extends HttpServlet {
 
             ps.setString(1, Name);
             ps.setString(2, email);
-            ps.setString(3, Phone);
-            ps.setString(4, Card);
-            ps.setString(5, Cvv);
+            ps.setInt(3, p);
+            ps.setInt(4, c);
+            ps.setInt(5, a);
             ps.setString(6, Address);
             
            
