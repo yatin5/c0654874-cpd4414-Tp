@@ -89,7 +89,7 @@
                                     <td><input type="text" value="" name="cno" placeholder="Please enter 16-digit" required=""></td>
                                 </tr><tr>
                                     <td><label>CVV number:</label></td>
-                                    <td><input type="text" value="" name="cvv" placeholder="3-digit" required=""></td>
+                                    <td><input type="text" value="" name="cn" placeholder="3-digit" required=""></td>
                                 </tr> <tr>
                                     <td><label>Shipping Address:</label></td>
                                     <td><textarea name="add" required=""></textarea></td>
