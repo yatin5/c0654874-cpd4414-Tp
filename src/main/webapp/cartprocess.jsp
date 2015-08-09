@@ -21,7 +21,7 @@
             <div>
                 <div id="navigation">
                     <div class="infos">
-                        <a href="index.html">Cart</a> <a href="checkout.jsp">CheckOut</a>
+                        <a href="cart.jsp">Cart</a> <a href="checkout.jsp">CheckOut</a>
                     </div>
                     <div>
                         <a href="login.jsp">Login</a> <a href="signup.jsp">Register</a>

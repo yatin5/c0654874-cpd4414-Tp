@@ -17,7 +17,7 @@
 		<div>
 			<div id="navigation">
 				<div class="infos">
-					<a href="index.html">Cart</a> <a href="index.html">0 items</a>
+                                    <a href="cart.jsp">Cart</a> <a href="index.html">0 items</a>
 				</div>
 				<div>
 					<a href="login.jsp">Login</a> 
