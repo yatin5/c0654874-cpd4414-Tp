@@ -43,7 +43,7 @@
                         </li>
                         
                         <li>
-                            <a href="Contactus.jsp"><span>Contact</span></a>
+                            <a href="contactus.jsp"><span>Contact</span></a>
                         </li>
                     </ul>
                 </div>

@@ -53,12 +53,12 @@ public class checkout extends HttpServlet {
             
              int c = Integer.parseInt(Card);
              int a = Integer.parseInt(Cvv);
-             out.println(Name);
-             out.println(email);
-             out.println(p);
-             out.println(c);
-             out.println(a);
-             out.println(Address);
+//             out.println(Name);
+//             out.println(email);
+//             out.println(p);
+//             out.println(c);
+//             out.println(a);
+//             out.println(Address);
              
              
              HttpSession session = request.getSession();

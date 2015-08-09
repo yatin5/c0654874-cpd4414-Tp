@@ -15,6 +15,11 @@ import java.sql.SQLException;
  */
 public class LoginDatabase {
 
+    /**
+     *
+     * @return
+     * @throws SQLException
+     */
     public static Connection getConnection() throws SQLException {
         Connection conn = null;
         try {
